@@ -1,0 +1,87 @@
+Controller
+- ?? does this have a building object through which to interact with floor and elevator
+
+-creates new person
+    if(probHappened(3.5%))
+        createPerson(randomSeedValueID(counter), randAssignedFloor(1,50))       // ??where do I write function to create new person?? how do I refer to person class to make object??
+       
+-determines when a person is ready to leave the floor
+    if(probHappened(1.5%))
+        setFloorPersonReady(whatFloor, )                                        // ??how do I use an array of booleans for this?? how do I let the elevator know floor is ready for 
+                                                                                   pickup?? how do I let the elevator know what ID to scan for?? !! call this on each and every floor !!
+
+-creates the main loop generating ticks                                         // ??how the hell do I create ticks??
+-??calls update on each building on each tick??                                 // ??what the hell does this mean??
+-??recording and ouputting information??                                        // ??what information needs to be recorded and outputted??
+
+
+
+Building                                                                        // ??how do I create a building object and make the controller interact with it??
+-building object assigned with floor and elevator                               // ??how do I instantiate a floor and elevator object in building?
+
+
+
+Person
+-person object assigned with ID and destination floor
+
+
+
+
+
+
+
+
+
+Elevator
+ MemberFunctions
+-moveUp
+    incrementElevatorPosition()      {4 ticks}
+-moveDown
+    decrementElevatorPosition()      {4 ticks}
+-loadFrom
+    addToElevatorBag(FloorDequeue()) {10 ticks}
+-unloadTo
+    addToFloorBag(removeFromElevatorBag()) {10 ticks}
+-idle
+    stayStill()                                                                     //??what??
+
+ Members
+-array of booleans to signal if floor has someone ready to leave                    // !! make sure to unset the floor's readytoleave person if elevator empties the queue !!
+    bool callSet[50]{}
+
+-variable or function to hold elevators decrementElevatorPosition
+    elevarPosition(1 - 50)                                                          // ??how should I write this??
+
+
+
+ HelperFunctions
+-call set function to check if someone ready to leave
+    for(i{1-50})
+        if(callset[i])
+            if(elevatorFloor > Floor[i])
+                moveDown(Floor[i])                                                  // ??how does elevator know which floor it's at??how does elevator know whether to move up or down??
+            moveUp(Floor[i])
+
+
+
+
+
+
+
+
+
+
+
+
+Floor -> Lobby
+ MemberFunctions
+-
+
+
+
+Members
+ FloorBagArray[50] {}
+ FloorQueueArray[50] {}
+
+
+
